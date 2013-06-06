@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<title>MapDummy</title>
+	  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="themap" ng-controller="map">
+		<div>
+			<img src="images/checkerboard.png" usemap="#locations" />
+			<!-- Coords are post-scaling!! -->
+			<map name="locations">
+				<area shape="rect" coords="0,0,80,80" ng-click="mapClick('topleft')">
+				<area shape="rect" coords="120,0,200,80" ng-click="mapClick('topright')">
+				<area shape="rect" coords="0,120,80,200" ng-click="mapClick('bottomleft')">
+				<area shape="rect" coords="120,120,200,200" ng-click="mapClick('bottomright')">
+			</map>
+			<img class="flag primary" ng-class="primary" id="primaryflag" src="images/flag.png" ng-click="mapClick(primary)">
+			<img class="flag secondary" ng-class="secondary1" id="secondary1flag" src="images/flag.png" ng-click="mapClick(secondary1)">
+			<img class="flag secondary" ng-class="secondary2" id="secondary2flag" src="images/flag.png" ng-click="mapClick(secondary2)">
+		</div>
+		<nav>
+			<p>
+				Current selection: {{selection()}}
+			</p>
+			<p>
+				<label>Primary:</label>
+				<select id="primary" ng-model="primary">
+					<option value="none">Choose...</option>
+					<option value="topleft">Top left</option>
+					<option value="topright">Top right</option>
+					<option value="bottomleft">Bottom left</option>
+					<option value="bottomright">Bottom right</option>
+				</select>
+			</p>
+			<p>
+				<label>1st Secondary:</label>
+				<select id="secondary1" ng-model="secondary1">
+					<option value="none">Choose...</option>
+					<option value="topleft">Top left</option>
+					<option value="topright">Top right</option>
+					<option value="bottomleft">Bottom left</option>
+					<option value="bottomright">Bottom right</option>
+				</select>
+			</p>
+			<p>
+				<label>2nd Secondary:</label>
+				<select id="secondary2" ng-model="secondary2">
+					<option value="none">Choose...</option>
+					<option value="topleft">Top left</option>
+					<option value="topright">Top right</option>
+					<option value="bottomleft">Bottom left</option>
+					<option value="bottomright">Bottom right</option>
+				</select>
+			</p>
+		</nav>
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.5/require.min.js" data-main="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+body {
+	padding: 100px;
+	max-width: 700px;
+}
+
+#themap {
+	> div {
+		position: relative;
+		display: block;
+		float: right;
+		width: 200px;
+		height: 200px;
+		img, area {
+			width: 200px;
+			height: 200px;
+		}
+		.flag {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+		}
+		.primary {
+			border: 1px solid #FF0000;
+		}
+		.secondary {
+			border: 1px solid #880000;
+		}
+		.none {
+			display: none;
+		}
+		.topleft {
+			display: block;
+			left: 40px;
+			top: 20px;
+		}
+		.topright {
+			display: block;
+			left: 160px;
+			top: 20px;
+		}
+		.bottomright {
+			display: block;
+			left: 160px;
+			top: 140px;
+		}
+		.bottomleft {
+			display: block;
+			left: 40px;
+			top: 140px;
+		}
+	}
+}
